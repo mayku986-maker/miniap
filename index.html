@@ -30,14 +30,17 @@ body {
 }
 .content {
     z-index:1;
-    text-align:center;
+    text-align:left; /* текст и кнопки выравниваем по левому краю блока */
     width:80%;
+}
+h2 {
+    text-align:center; /* заголовок остаётся по центру */
 }
 .btn {
     display:block;
-    width:100%;
-    padding:15px;
+    width:90%; /* чуть уже, чтобы сдвинуть визуально */
     margin:10px 0;
+    margin-left:5%; /* сдвиг влево */
     border:2px solid #3b82f6;
     background: rgba(59,130,246,0.2);
     color:white;
@@ -46,11 +49,9 @@ body {
     font-weight:bold;
     backdrop-filter: blur(5px);
     transition:0.3s;
-    /* начальный сдвиг влево */
-    transform: translateX(-10px);
 }
 .btn:active {
-    transform: scale(0.95) translateX(-10px);
+    transform:scale(0.95);
     background: rgba(59,130,246,0.4);
 }
 .snowflake {
@@ -92,16 +93,6 @@ function createSnowflake() {
     setTimeout(()=>{flake.remove();},5000);
 }
 setInterval(createSnowflake,50); // чаще падают
-
-// Лёгкий рандомный сдвиг кнопок
-function randomizeButtons() {
-    const buttons = document.querySelectorAll('#menu1 .btn');
-    buttons.forEach(btn => {
-        const shift = -10 + Math.random()*5; // -10px … -5px
-        btn.style.transform = `translateX(${shift}px)`;
-    });
-}
-randomizeButtons();
 </script>
 </body>
 </html>
