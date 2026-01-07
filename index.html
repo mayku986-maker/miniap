@@ -32,8 +32,6 @@ body {
     z-index:1;
     text-align:center;
     width:80%;
-    /* Сдвиг всех надписей и кнопок чуть влево */
-    transform: translateX(-15px);
 }
 .btn {
     display:block;
@@ -91,9 +89,18 @@ function createSnowflake() {
     snow.appendChild(flake);
     setTimeout(()=>{flake.remove();},5000);
 }
+setInterval(createSnowflake,50); // чаще падают
 
-// Снежинки падают чаще (каждые 50 мс)
-setInterval(createSnowflake,50);
+// Рандомный сдвиг текста и кнопок
+function randomizePosition() {
+    const elements = document.querySelectorAll('#menu1 h2, #menu1 .btn');
+    elements.forEach(el=>{
+        const shift = Math.random()*20 - 10; // сдвиг от -10px до +10px
+        el.style.display = 'inline-block';
+        el.style.transform = `translateX(${shift}px)`;
+    });
+}
+randomizePosition();
 </script>
 </body>
 </html>
