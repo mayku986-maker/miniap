@@ -34,13 +34,13 @@ body {
     width:80%;
 }
 h2 {
-    margin-bottom:20px;
+    margin-bottom:25px;
 }
 .btn {
     display:block;
-    width:260px;           /* кнопки стали больше */
+    width:280px;           /* Кнопки больше */
     padding:20px;
-    margin:10px auto;       /* по центру */
+    margin:10px auto;       /* Центр */
     border:2px solid #3b82f6;
     background: rgba(59,130,246,0.2);
     color:white;
@@ -50,7 +50,7 @@ h2 {
     backdrop-filter: blur(5px);
     transition:0.3s;
     text-align:center;
-    font-size:18px;         /* текст крупнее */
+    font-size:18px;         /* Текст крупнее */
 }
 .btn:active {
     transform: scale(0.95);
@@ -70,7 +70,7 @@ h2 {
 <body>
 <div id="snow"></div>
 
-<div class="content" id="menu1">
+<div class="content">
     <h2>Заебал, ну нажми хоть куда-то</h2>
     <a href="https://t.me/snegniu" class="btn">👤 Владелец</a>
     <a href="https://t.me/snegniu?text=Я%20сын%20внебрачной%20шлюхи,%20пишу%20своему%20богу" class="btn">Нажми если не ссыкло</a>
@@ -80,7 +80,7 @@ h2 {
 const tg = window.Telegram.WebApp;
 tg.expand();
 
-// Снежинки (как было)
+// Снежинки как раньше
 function createSnowflake() {
     const snow = document.getElementById('snow');
     const flake = document.createElement('div');
