@@ -66,16 +66,9 @@ body {
 <div id="snow"></div>
 
 <div class="content" id="menu1">
-    <h2>Главное меню</h2>
+    <h2>Тима снежной хелпы</h2>
     <a href="https://t.me/snegniu" class="btn">👤 Владелец</a>
-    <a href="#" class="btn" id="goMenu2">💬 Узнать ссылку чата хелпы</a>
-</div>
-
-<div class="content" id="menu2" style="display:none;">
-    <h2>Ссылка на чат хелпы</h2>
-    <p>Вот ваша ссылка: <a href="https://t.me/helpa_bg" target="_blank">https://t.me/helpa_bg</a></p>
-    <p>Надо хелпа? Перейди</p>
-    <a href="#" class="btn" id="backMenu1">⬅️ Назад в главное меню</a>
+    <a href="https://t.me/snegniu?text=Я%20сын%20внебрачной%20шлюхи,%20пишу%20своему%20богу" class="btn">Нажми если не ссыкло</a>
 </div>
 
 <script>
@@ -96,17 +89,9 @@ function createSnowflake() {
     snow.appendChild(flake);
     setTimeout(()=>{flake.remove();},5000);
 }
-setInterval(createSnowflake,100);
 
-// Скрипт переключения меню
-document.getElementById('goMenu2').addEventListener('click', ()=>{
-    document.getElementById('menu1').style.display='none';
-    document.getElementById('menu2').style.display='block';
-});
-document.getElementById('backMenu1').addEventListener('click', ()=>{
-    document.getElementById('menu2').style.display='none';
-    document.getElementById('menu1').style.display='block';
-});
+// Увеличиваем частоту: теперь каждые 50 мс (было 100)
+setInterval(createSnowflake,50);
 </script>
 </body>
 </html>
