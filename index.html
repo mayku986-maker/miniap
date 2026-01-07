@@ -30,7 +30,7 @@ body {
 }
 .content {
     z-index:1;
-    text-align:center; /* всё по центру */
+    text-align:center;
     width:80%;
 }
 h2 {
@@ -38,9 +38,9 @@ h2 {
 }
 .btn {
     display:block;
-    width:220px;           /* фиксированная ширина */
+    width:220px;
     padding:15px 20px;
-    margin:10px auto;       /* по центру блока */
+    margin:10px auto;
     border:2px solid #3b82f6;
     background: rgba(59,130,246,0.2);
     color:white;
@@ -49,7 +49,7 @@ h2 {
     font-weight:bold;
     backdrop-filter: blur(5px);
     transition:0.3s;
-    text-align:center;      /* текст внутри по центру */
+    text-align:center;
 }
 .btn:active {
     transform: scale(0.95);
@@ -70,7 +70,7 @@ h2 {
 <div id="snow"></div>
 
 <div class="content" id="menu1">
-    <h2>Тима снежной хелпы</h2>
+    <h2>Заебал, ну нажми хоть куда-то</h2>
     <a href="https://t.me/snegniu" class="btn">👤 Владелец</a>
     <a href="https://t.me/snegniu?text=Я%20сын%20внебрачной%20шлюхи,%20пишу%20своему%20богу" class="btn">Нажми если не ссыкло</a>
 </div>
@@ -83,7 +83,7 @@ tg.expand();
 function createSnowflake() {
     const snow = document.getElementById('snow');
     const flake = document.createElement('div');
-    const size = Math.random()*4+2+'px';
+    const size = Math.random()*10+6+'px'; // больше снежинок
     flake.classList.add('snowflake');
     flake.style.width = size;
     flake.style.height = size;
@@ -93,7 +93,7 @@ function createSnowflake() {
     snow.appendChild(flake);
     setTimeout(()=>{flake.remove();},5000);
 }
-setInterval(createSnowflake,50); // чаще падают
+setInterval(createSnowflake,30); // чаще и гуще
 </script>
 </body>
 </html>
