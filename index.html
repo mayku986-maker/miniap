@@ -38,9 +38,9 @@ h2 {
 }
 .btn {
     display:block;
-    width:280px;           /* Кнопки больше */
+    width:280px;
     padding:20px;
-    margin:10px auto;       /* Центр */
+    margin:10px auto;
     border:2px solid #3b82f6;
     background: rgba(59,130,246,0.2);
     color:white;
@@ -50,7 +50,7 @@ h2 {
     backdrop-filter: blur(5px);
     transition:0.3s;
     text-align:center;
-    font-size:18px;         /* Текст крупнее */
+    font-size:18px;
 }
 .btn:active {
     transform: scale(0.95);
@@ -60,7 +60,7 @@ h2 {
     position:absolute;
     background:white;
     border-radius:50%;
-    opacity:0.8;
+    opacity:0.9;
     pointer-events:none;
     animation:fall linear infinite;
 }
@@ -80,21 +80,22 @@ h2 {
 const tg = window.Telegram.WebApp;
 tg.expand();
 
-// Снежинки как раньше
+// Снежинки больше и гуще
 function createSnowflake() {
     const snow = document.getElementById('snow');
     const flake = document.createElement('div');
-    const size = Math.random()*4+2+'px';
+    const size = Math.random()*6 + 4 + 'px';  // увеличенный размер
     flake.classList.add('snowflake');
     flake.style.width = size;
     flake.style.height = size;
     flake.style.left = Math.random()*100+'vw';
-    flake.style.animationDuration = Math.random()*3+2+'s';
-    flake.style.opacity = Math.random();
+    flake.style.animationDuration = (Math.random()*2 + 2) + 's'; // чуть быстрее
+    flake.style.opacity = Math.random()*0.8 + 0.2;
     snow.appendChild(flake);
-    setTimeout(()=>{flake.remove();},5000);
+    setTimeout(()=>{flake.remove();},4000); // удаляем быстрее, чтобы снежинки чаще появлялись
 }
-setInterval(createSnowflake,100);
+// увеличиваем частоту появления
+setInterval(createSnowflake,50); // раньше было 100, теперь 50ms
 </script>
 </body>
 </html>
