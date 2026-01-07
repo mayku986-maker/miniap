@@ -32,6 +32,8 @@ body {
     z-index:1;
     text-align:center;
     width:80%;
+    /* Сдвиг всех надписей и кнопок чуть влево */
+    transform: translateX(-15px);
 }
 .btn {
     display:block;
@@ -90,7 +92,7 @@ function createSnowflake() {
     setTimeout(()=>{flake.remove();},5000);
 }
 
-// Увеличиваем частоту: теперь каждые 50 мс (было 100)
+// Снежинки падают чаще (каждые 50 мс)
 setInterval(createSnowflake,50);
 </script>
 </body>
