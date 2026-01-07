@@ -38,9 +38,9 @@ h2 {
 }
 .btn {
     display:block;
-    width:220px;
-    padding:15px 20px;
-    margin:10px auto;
+    width:260px;           /* кнопки стали больше */
+    padding:20px;
+    margin:10px auto;       /* по центру блока */
     border:2px solid #3b82f6;
     background: rgba(59,130,246,0.2);
     color:white;
@@ -50,6 +50,7 @@ h2 {
     backdrop-filter: blur(5px);
     transition:0.3s;
     text-align:center;
+    font-size:18px;         /* текст крупнее */
 }
 .btn:active {
     transform: scale(0.95);
@@ -79,11 +80,11 @@ h2 {
 const tg = window.Telegram.WebApp;
 tg.expand();
 
-// Снежинки
+// Снежинки как раньше
 function createSnowflake() {
     const snow = document.getElementById('snow');
     const flake = document.createElement('div');
-    const size = Math.random()*10+6+'px'; // больше снежинок
+    const size = Math.random()*4+2+'px';
     flake.classList.add('snowflake');
     flake.style.width = size;
     flake.style.height = size;
@@ -93,7 +94,7 @@ function createSnowflake() {
     snow.appendChild(flake);
     setTimeout(()=>{flake.remove();},5000);
 }
-setInterval(createSnowflake,30); // чаще и гуще
+setInterval(createSnowflake,100);
 </script>
 </body>
 </html>
